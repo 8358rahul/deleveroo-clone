@@ -20,7 +20,7 @@ const Categories = () => {
   return (
     <ScrollView 
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 10 }}
+        contentContainerStyle={{ paddingHorizontal: 10, }}
         horizontal
     >
         {/* Categorycard */}
@@ -30,10 +30,7 @@ const Categories = () => {
          imgUrl= {urlFor(category.image).url()} 
          title={category.name}
          />
-        ))}
-
-       
-
+        ))} 
 
     </ScrollView>
   )

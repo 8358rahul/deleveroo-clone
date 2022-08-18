@@ -11,23 +11,19 @@ import {
   addToBasket,
   selectbasketItemsWithId,
   removeFromBasket,
-  selectbasketItems,
 } from "../features/basketSlice";
 
 const DishRow = ({ id, name, price, image, description }) => {
   const [isPressed, setIsPressed] = useState(false);
   const dispatch = useDispatch();
 
-  const items = useSelector((state) => selectbasketItemsWithId(state, id));
-
-  const addItemToBasket = () => {
-    dispatch(addToBasket({ id, name, price, image, description }));
-  };
+  const items = useSelector((state) => selectbasketItemsWithId(state, id)); 
 
   const removeItemFromBascket = () => {
     if (!items.length > 0) return;
     dispatch(removeFromBasket({ id }));
   };
+
   return (
     <>
       <TouchableOpacity
@@ -43,12 +39,13 @@ const DishRow = ({ id, name, price, image, description }) => {
             <Text className="text-gray-400 ">
               <Currency quantity={price} currency="GBP" />
             </Text>
+            
           </View>
           <View>
             <Image
               source={{ uri: urlFor(image).url() }}
               className="h-20 w-20 bg-gray-300 p-4 border border-gray-200"
-            />
+            />            
           </View>
         </View>
       </TouchableOpacity>
@@ -62,12 +59,13 @@ const DishRow = ({ id, name, price, image, description }) => {
               <MinusCircleIcon
                 size={40}
                 color={items.length > 0 ? "#00CCBB" : "gray"}
-              />
+              />              
             </TouchableOpacity>
             <Text>{items.length}</Text>
-            <TouchableOpacity onPress={() => addItemToBasket()}>
+            <TouchableOpacity onPress={() => dispatch(addToBasket({ id, name, price, image, description }))}>
               <PlusCircleIcon size={40} color="#00CCBB" />
             </TouchableOpacity>
+           
           </View>
         </View>
       )}

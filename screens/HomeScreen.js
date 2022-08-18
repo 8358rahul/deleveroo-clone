@@ -53,7 +53,7 @@ const HomeScreen = () => {
           className="h-7 w-7 bg-gray-300 p-4 rounded-full"
         />
 
-        <View className="flex-1 ">
+        <View className="flex-1">
           <Text className="text-gray-400 font-bold text-xs">Deliver Now!</Text>
           <Text className="text-xl font-bold">
             Current Location
@@ -67,7 +67,7 @@ const HomeScreen = () => {
         <UserIcon size={35} color="#00CCBB" />
       </View>
       {/* Search */}
-      <View className="flex-row items-center space-x-2 mx-4 px-2  ">
+      <View className="flex-row items-center space-x-2 mx-4 px-2 my-2">
         <View className="flex-row space-x-2 flex-1 bg-gray-200 p-3">
           <SearchIcon size={20} color="gray" />
           <TextInput

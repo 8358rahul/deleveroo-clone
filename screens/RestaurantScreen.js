@@ -90,7 +90,7 @@ const RestaurantScreen = () => {
         {dishes.map((dish, index) => (
           <DishRow
             key={index}
-            id={dish.id}
+            id={dish._id}
             name={dish.name}
             price={dish.price}
             description={dish.short_description}
